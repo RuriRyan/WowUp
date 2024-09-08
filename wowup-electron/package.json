@@ -164,7 +164,6 @@
     "karma-jasmine": "5.1.0",
     "karma-jasmine-html-reporter": "2.1.0",
     "markdown-it": "14.1.0",
-    "@messageformat/core": "3.0.0",
     "mocha": "10.7.3",
     "ng-gallery": "11.0.0",
     "ngx-translate-messageformat-compiler": "7.0.0",
@@ -183,7 +182,7 @@
     "typescript": "5.2.2",
     "uuid": "10.0.0",
     "wait-on": "8.0.0",
-    "zone.js": "0.15.0"
+    "zone.js": "0.14.10"
   },
   "engines": {
     "node": ">=16.0.0"

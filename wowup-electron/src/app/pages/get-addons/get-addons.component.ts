@@ -1,6 +1,5 @@
 import {
   ColDef,
-  ColumnApi,
   GridApi,
   GridReadyEvent,
   IRowNode,
@@ -134,7 +133,6 @@ export class GetAddonsComponent implements OnInit, OnDestroy {
   );
 
   public gridApi!: GridApi;
-  public gridColumnApi!: ColumnApi;
 
   public addonCategories: CategoryItem[] = [];
 
@@ -298,7 +296,6 @@ export class GetAddonsComponent implements OnInit, OnDestroy {
 
   public onGridReady(params: GridReadyEvent): void {
     this.gridApi = params.api;
-    this.gridColumnApi = params.columnApi;
   }
 
   public ngOnInit(): void {
@@ -359,7 +356,7 @@ export class GetAddonsComponent implements OnInit, OnDestroy {
     colState.visible = event.checked;
     await this._wowUpService.setGetAddonsHiddenColumns([...this.columnStates]);
 
-    this.gridColumnApi.setColumnVisible(column.name, event.checked);
+    this.gridApi.setColumnsVisible([column.name], event.checked);
   }
 
   // If nodes have the same primary value, use the canonical name as a fallback
