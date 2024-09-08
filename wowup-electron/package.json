@@ -120,7 +120,7 @@
     "@overwolf/ow-electron": "28.3.4",
     "@overwolf/ow-electron-builder": "24.13.8",
     "@types/adm-zip": "0.5.1",
-    "@types/flat": "5.0.2",
+    "@types/flat": "5.0.5",
     "@types/globrex": "0.1.2",
     "@types/jasmine": "4.3.5",
     "@types/jasminewd2": "2.0.10",
