@@ -81,7 +81,7 @@
     "nanoid": "5.0.7",
     "node-disk-info": "1.3.0",
     "protobufjs": "7.4.0",
-    "pushy-electron": "1.0.11",
+    "pushy-electron": "1.0.15",
     "rxjs": "7.8.1",
     "win-ca": "3.5.1",
     "wowup-lib-core": "1.0.8",
