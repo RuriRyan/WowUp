@@ -69,7 +69,7 @@
     "chrome 98"
   ],
   "dependencies": {
-    "adm-zip": "0.5.12",
+    "adm-zip": "0.5.16",
     "auto-launch": "5.0.6",
     "electron-log": "5.2.0",
     "electron-store": "8.2.0",
@@ -119,7 +119,7 @@
     "@ngx-translate/http-loader": "8.0.0",
     "@overwolf/ow-electron": "28.3.4",
     "@overwolf/ow-electron-builder": "24.13.8",
-    "@types/adm-zip": "0.5.1",
+    "@types/adm-zip": "0.5.5",
     "@types/flat": "5.0.5",
     "@types/globrex": "0.1.2",
     "@types/jasmine": "4.3.5",
