@@ -171,7 +171,7 @@
     "node-addon-api": "8.0.0",
     "node-cache": "5.1.2",
     "node-gyp": "10.1.0",
-    "npm-run-all2": "5.0.0",
+    "npm-run-all2": "5.0.2",
     "object-hash": "3.0.0",
     "opossum": "7.1.0",
     "prettier": "3.3.3",
