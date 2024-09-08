@@ -168,7 +168,7 @@
     "mocha": "10.7.3",
     "ng-gallery": "11.0.0",
     "ngx-translate-messageformat-compiler": "7.0.0",
-    "node-addon-api": "8.0.0",
+    "node-addon-api": "8.1.0",
     "node-cache": "5.1.2",
     "node-gyp": "10.1.0",
     "npm-run-all2": "6.2.2",
