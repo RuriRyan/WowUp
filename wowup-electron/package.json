@@ -123,7 +123,7 @@
     "@types/flat": "5.0.5",
     "@types/globrex": "0.1.4",
     "@types/jasmine": "4.6.4",
-    "@types/jasminewd2": "2.0.10",
+    "@types/jasminewd2": "2.0.13",
     "@types/lodash": "4.17.7",
     "@types/mocha": "10.0.7",
     "@types/node": "18.19.50",
