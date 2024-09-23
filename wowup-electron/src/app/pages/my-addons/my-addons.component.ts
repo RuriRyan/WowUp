@@ -1,7 +1,6 @@
 import {
   CellContextMenuEvent,
   ColDef,
-  ColumnApi,
   GridApi,
   GridReadyEvent,
   IRowNode,
@@ -188,7 +187,6 @@ export class MyAddonsComponent implements OnInit, OnDestroy, AfterViewInit {
   public rowDataG: any[] = [];
   public columnDefs$ = new BehaviorSubject<ColDef[]>([]);
   public gridApi!: GridApi;
-  public gridColumnApi!: ColumnApi;
   public rowClassRules = {
     ignored: (params: RowClassParams): boolean => {
       return params.data.addon.isIgnored === true;
@@ -399,7 +397,7 @@ export class MyAddonsComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   public async onSortChanged(evt: SortChangedEvent): Promise<void> {
-    const columnState = evt.columnApi.getColumnState();
+    const columnState = evt.api.getColumnState();
     console.debug("columnState", columnState);
     const minimalState = columnState.map((column) => {
       const sortOrder: SortOrder = {
@@ -422,10 +420,9 @@ export class MyAddonsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   public onGridReady(params: GridReadyEvent): void {
     this.gridApi = params.api;
-    this.gridColumnApi = params.columnApi;
 
     // Set initial sort order
-    this.gridColumnApi.applyColumnState({
+    this.gridApi.applyColumnState({
       state: [
         {
           colId: "sortOrder",
@@ -440,7 +437,7 @@ export class MyAddonsComponent implements OnInit, OnDestroy, AfterViewInit {
     this.rowData$
       .pipe(
         tap((data) => {
-          this.gridApi.setRowData(data);
+          this.gridApi.setGridOption("rowData", data);
           this.setPageContextText();
         }),
         debounceTime(200),
@@ -734,7 +731,7 @@ export class MyAddonsComponent implements OnInit, OnDestroy, AfterViewInit {
 
     await this.wowUpService.setMyAddonsHiddenColumns([...this.columns]);
 
-    this.gridColumnApi.setColumnVisible(column.name, event.checked);
+    this.gridApi.setColumnsVisible([column.name], event.checked);
 
     if (column.name === "latestVersion") {
       this._sessionService.myAddonsCompactVersion = !event.checked;
@@ -1335,7 +1332,7 @@ export class MyAddonsComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     if (savedSortOrder.length > 0) {
-      this.gridColumnApi.applyColumnState({
+      this.gridApi.applyColumnState({
         state: savedSortOrder,
       });
     }
@@ -1347,7 +1344,7 @@ export class MyAddonsComponent implements OnInit, OnDestroy, AfterViewInit {
       return;
     }
 
-    this.gridColumnApi?.autoSizeColumns([
+    this.gridApi?.autoSizeColumns([
       "installedAt",
       "latestVersion",
       "releasedAt",
