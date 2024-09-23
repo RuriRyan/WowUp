@@ -122,7 +122,7 @@
     "@types/adm-zip": "0.5.1",
     "@types/flat": "5.0.2",
     "@types/globrex": "0.1.2",
-    "@types/jasmine": "4.3.5",
+    "@types/jasmine": "4.6.4",
     "@types/jasminewd2": "2.0.10",
     "@types/lodash": "4.14.198",
     "@types/mocha": "10.0.1",
